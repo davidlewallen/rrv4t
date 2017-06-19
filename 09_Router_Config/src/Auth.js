@@ -6,7 +6,7 @@ export default {
   },
   signout(cb) {
     this.isAuthenticated = false
-    cb()
+    if (cb) { cb() };
     setTimeout(cb, 100) // weird bug if async?
   }
 }

@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import fakeAuth from '../Auth'
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router-dom'
 
 export default class Login extends Component {
-  state = {
-    redirectToReferrer: false
+  constructor() {
+    super();
+    this.state = {
+      redirectToReferrer: false
+    }
   }
 
   login() {
@@ -13,8 +16,9 @@ export default class Login extends Component {
   	})
   }
   render() {
+    console.log('this.props', this.props);
     const { from } = this.props.location.state || '/'
-    const { redirectToReferrer } = this.state  
+    const { redirectToReferrer } = this.state
     return (
       <div>
         {redirectToReferrer && (

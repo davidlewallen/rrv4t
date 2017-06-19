@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 var config = {
 
-  devtool: 'eval',
+  devtool: 'source-map',
 
   entry: [
     './src/App',

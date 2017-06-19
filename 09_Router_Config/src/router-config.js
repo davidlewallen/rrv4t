@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router-dom'
 import { Home, BasicRouting, Blocking, Miss, QueryParams, Recursive, Login, Protected } from './Components'
 import fakeAuth from './Auth'
 

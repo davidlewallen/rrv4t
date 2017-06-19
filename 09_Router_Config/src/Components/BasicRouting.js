@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import { Match, Link } from 'react-router'
+import { Route, NavLink } from 'react-router-dom'
 import { Content } from '../Components'
 
 export default class BasicRouting extends Component {
   render() {
+    console.log('1');
   	const { location, pattern, pathname, isExact } = this.props
     return (
       <div>
@@ -12,14 +13,14 @@ export default class BasicRouting extends Component {
       <p>Select a level from Left Navigation to view the content, also notice the change in URL.</p>
       <div className="leftNavi">
       	<ul>
-      		<li><Link to={pathname +"/level1"} activeClassName="active">Level 1</Link></li>
-      		<li><Link to={pathname + "/level2"} activeClassName="active">Level 2</Link></li>
-      		<li><Link to={pathname + "/level3"} activeClassName="active">Level 3</Link></li>
+      		<li><NavLink to={pathname +"/level1"} activeClassName="active">Level 1</NavLink></li>
+          <li><NavLink to={pathname + "/level2"} activeClassName="active">Level 2</NavLink></li>
+          <li><NavLink to={pathname + "/level3"} activeClassName="active">Level 3</NavLink></li>
       	</ul>
       </div>
       <div className="rightContent">
       	<p>Second Level Content will appear here:</p>
-      	<Match pattern={`${pathname}/:level`} component={Content}/>
+        <Route pattern={`${pathname}/:level`} component={Content}/>
       </div>
       </div>
     )
