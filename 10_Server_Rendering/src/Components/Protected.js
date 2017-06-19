@@ -4,10 +4,13 @@ import fakeAuth from '../Auth'
 import { Content } from '../Components'
 
 export default class ProtectedPage extends Component {
-  state = { signedOut: false}
+  constructor() {
+    super();
+    this.state = { signedOut: false}
+  }
   render() {
   	const { location, pattern, pathname, isExact, isAutorized, router } = this.props
-    const { signedOut } = this.state  
+    const { signedOut } = this.state
     return (
         <div>
         {signedOut && (<Redirect to='/'/>)}

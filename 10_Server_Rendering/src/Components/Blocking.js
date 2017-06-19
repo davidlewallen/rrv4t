@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import NavigationPrompt from 'react-router/NavigationPrompt'
+import { NavigationPrompt } from 'react-router'
 
 export default class Blocking extends Component {
   render() {
